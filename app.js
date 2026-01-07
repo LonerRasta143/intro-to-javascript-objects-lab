@@ -17,8 +17,8 @@ const game = {
         { name: "pokeball", quantity: 8 },
         { name: "rare candy", quantity: 99 },
     ],
-    
-   
+
+
 }
 
 //Excercise 3
@@ -36,36 +36,36 @@ const starter = pokemon.find(p => p.starter === true); game.party.push(starter);
 
 //Excercise 5
 
-const fireType = pokemon.find(p => p.type === "fire"); 
-const highHp = pokemon.find(p => p.hp > 80); 
-const waterType = pokemon.find(p => p.type === "water"); 
+const fireType = pokemon.find(p => p.type === "fire");
+const highHp = pokemon.find(p => p.hp > 80);
+const waterType = pokemon.find(p => p.type === "water");
 game.party.push(fireType, highHp, waterType);
 game.party.push('charmander')
 
 
 //Excercise 6
-for(let i = 0; i < game.gyms.length; i++) {
-    if (game.gyms[i].difficulty < 3){
+for (let i = 0; i < game.gyms.length; i++) {
+    if (game.gyms[i].difficulty < 3) {
         game.gyms[i].completed = true;
     }
 }
 //Excercise 7
-const starterIndex = game.party.findIndex(p => p.starter); 
-const starterPokemon = game.party[starterIndex]; 
-const evolved = pokemon.find(p => p.number === starter.number + 1); 
+const starterIndex = game.party.findIndex(p => p.starter);
+const starterPokemon = game.party[starterIndex];
+const evolved = pokemon.find(p => p.number === starter.number + 1);
 game.party.splice(starterIndex, 1, evolved);
 
 //Excercise 8
-game.party.forEach(p => console.log(p.name)) 
+game.party.forEach(p => console.log(p.name))
 
 //Exercise9
-pokemon.filter(p => p.starter).forEach(p => console.log(p.name)) 
+pokemon.filter(p => p.starter).forEach(p => console.log(p.name))
 
 //Excercise 10
 game.catchPokemon = function (pokemonObj) {
     this.party.push(pokemonObj);
 };
-const electricType = pokemon.find(p => p.type === "electric"); 
+const electricType = pokemon.find(p => p.type === "electric");
 game.catchPokemon(electricType);
 
 //Excercise 11
@@ -73,8 +73,8 @@ game.catchPokemon = function (pokemonObj) {
     this.party.push(pokemonObj);
 
 
-const ballItem = this.items.find(i => i.name.includes("ball"));
-    if(ballItem){
+    const ballItem = this.items.find(i => i.name.includes("ball"));
+    if (ballItem) {
         ballItem.quantity = ballItem.quantity - 1;
     };
     console.log(ballItem.quantity);
@@ -90,14 +90,15 @@ for (let i = 0; i < game.gyms.length; i++) {
 
 //Excercise 13
 
-game.gymstatus = function() {
-    const gymTally ={ completed: 0, incomplete: 0};
+game.gymstatus = function () {
+    const gymTally = { completed: 0, incomplete: 0 };
 
     this.gyms.forEach(gym => {
-        if(gym.completes){
+        if (gym.completes) {
             gymTally.completed++;
-        } 
-        else{gymTally.incomplete++;
+        }
+        else {
+            gymTally.incomplete++;
 
         }
     });
@@ -107,7 +108,7 @@ game.gymstatus = function() {
 
 //Excercise 14
 
-game.partyCount = function() {
+game.partyCount = function () {
     return this.party.length;
 };
 
@@ -116,12 +117,12 @@ console.log(game.partyCount())
 
 //Excercise 15
 
-for(let gym of game.gyms){
-    if (gym.difficulty <8){
+for (let gym of game.gyms) {
+    if (gym.difficulty < 8) {
         gym.completed = true
     }
 }
 
-//Excercie 16
+//Excercie 16.
 
 console.log(game)
